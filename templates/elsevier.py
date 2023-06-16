@@ -2,7 +2,7 @@
 from .methods import Methods
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
-from chemdataextractor.doc import Paragraph
+#from chemdataextractor.doc import Paragraph
 import re
 
 
@@ -27,6 +27,7 @@ class ElsevierTemplate(Methods):
 
     def author(self):
         """Temporarily method"""
+        print('I have entered print method')
         parser = PDFParser(self.file)
         doc = PDFDocument(parser)
 
@@ -90,7 +91,8 @@ class ElsevierTemplate(Methods):
         if not chem:
             return abstract
         else:
-            return Paragraph(abstract)
+            return abstract
+            #return Paragraph(abstract)
 
     def caption(self, nicely=False):
         if nicely == True:

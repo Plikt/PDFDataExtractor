@@ -212,7 +212,8 @@ class Reader:
         #     return Springer(pdf)
 
         else:
-            print('Publisher Not Supported at the moment')
+            print('Publisher Not Supported at the moment using Elsevier Template')
+            return ElsevierTemplate(pdf, f)
 
     def read_file(self, file_name):
         """
@@ -224,7 +225,6 @@ class Reader:
         try:
             f = open(file_name, 'rb')
             device, interpreter, dic = self.PDFsetup()
-
             # Loop through every page of a PDF file
             for page_seq, page in enumerate(
                     PDFPage.get_pages(f, pagenos=set(), maxpages=0, password='', caching=True, check_extractable=True)):
@@ -238,7 +238,9 @@ class Reader:
             pdf = self.dic_sorting(dic)  # Whatever the publisher is, this one stays the same
 
             pdf_extracted = self.extraction(self.publishers, pdf, f)
+            
             return pdf_extracted
 
         except Exception as e:
+            print("You've entered an exception")
             pass

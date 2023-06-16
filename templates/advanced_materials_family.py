@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from .methods import Methods
-from chemdataextractor.doc import Paragraph
+#from chemdataextractor.doc import Paragraph
 import re
 
 
@@ -250,7 +250,8 @@ class AdvancedMaterialsFamilyTemplate(Methods):
         if not chem:
             return abstract
         else:
-            return Paragraph(abstract)
+            #return Paragraph(abstract)
+            return abstract
 
     def caption(self, nicely=False):
         if nicely == True:

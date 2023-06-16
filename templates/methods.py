@@ -301,6 +301,7 @@ class Methods(object):
                     result = pattern.group()
                     self.output_result['doi'] = result
                 else:
+                    self.output_result['doi'] = 'None'
                     pass
 
             # Figure caption

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from .methods import Methods
-from chemdataextractor.doc import Paragraph
+#from chemdataextractor.doc import Paragraph
 import re
 
 
@@ -239,7 +239,8 @@ class ChemistryEuropeanJournalTemplate(Methods):
         if not chem:
             return abstract
         else:
-            return Paragraph(abstract)
+            return abstract
+            #return Paragraph(abstract)
 
     def caption(self, nicely=False):
         if nicely == True:
