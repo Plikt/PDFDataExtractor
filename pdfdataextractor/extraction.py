@@ -10,6 +10,10 @@ from pdfminer.layout import LAParams, LTTextLine, LTTextBox, LTChar, LTAnno, LTT
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 from collections import Counter, OrderedDict
+import sys
+import os
+sys.path.append(os.path.abspath("/Users/desot1/Documents/GitHub/automating-metadata/PDFDataExtractor"))
+
 from templates import *
 
 
@@ -221,6 +225,7 @@ class Reader:
         """
 
         print('Reading: ', file_name)
+        f = open(file_name, 'rb')
 
         try:
             f = open(file_name, 'rb')

@@ -12,6 +12,8 @@ def read_single(file):
         #print(pdf.keywords())
         
         metadata = {
+            'author': pdf.author(),
+            'keywords': pdf.keywords(),
             'journal': pdf.journal(), 
             'title': pdf.title(),
             'doi': pdf.doi(),
@@ -19,17 +21,13 @@ def read_single(file):
             'caption': pdf.caption(),
             'reference': pdf.reference()
             }
+        
+        print("The metadata author and keywords are", metadata['author'], metadata['keywords'])
         """'author': pdf.author(),
         'keywords': pdf.keywords(),"""
-        print(metadata)
+        #print(metadata)
         with open("metadata.json", "w") as write_file:
             json.dump(metadata, write_file, indent=4) 
-
-        # print(pdf.section())
-        # for i,j in pdf.reference().items():
-        #     print(i)
-        #     print(j)
-
 
     except:
         pass
@@ -42,5 +40,4 @@ def read_multiple(path):
         print('-------------------', '\n')
 
 # read_multiple(glob.glob(r'/Users/miao/Desktop/PDFDataExtractor/SI/Others/acs/*.pdf'))
-read_single(r'/Users/desot1/Downloads/propermotions.pdf')
 # read_single(r'/Volumes/Backup/PDE_papers/articles/Elesvier/dssc/The-effect-of-molecular-structure-on-the-properties-of-quinox_2020_Dyes-and-.pdf')
